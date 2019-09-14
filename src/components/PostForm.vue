@@ -1,7 +1,7 @@
 <template>
   <form v-if="!loading" class="form" @submit.prevent="onSubmit">
     <div class="input-field">
-      <label for="title">Title</label>
+      <label for="title" :class=" [ id ? 'active' : '']">Title</label>
       <input
         type="text"
         name="title"
@@ -11,7 +11,7 @@
       <span class="helper-text" data-error="Title must not be empty"></span>
     </div>
     <div class="input-field">
-      <label for="body">Body</label>
+      <label for="body" :class=" [ id ? 'active' : '']">Body</label>
       <input type="text" name="body" v-model="body" :class="[errors.body ? 'invalid' : 'validate']">
       <span class="helper-text" data-error="Body must not be empty"></span>
     </div>
